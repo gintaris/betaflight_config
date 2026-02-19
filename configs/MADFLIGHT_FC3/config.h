@@ -168,11 +168,15 @@
 //+5V
 //GND
 
-// GPIOs
-#define PINIO1_PIN PA22
-#define PINIO2_PIN PA23
-#define PINIO3_PIN PA24
-#define PINIO4_PIN PA25
+// OSD (Framebuffer OSD) - uses PA22-PA24 for analog video overlay
+// Note: These pins must be consecutive. See docs/PICO_OSD_CONNECTION_SCHEMA.md
+#define USE_FB_OSD
+#define OSD_W_PIN        PA22  // White/Black output
+#define OSD_EN_PIN       PA23  // Enable/Key output
+#define OSD_SYNC_PIN     PA24  // Sync input from camera
+
+// Remaining GPIO for general purpose
+#define PINIO1_PIN PA25
 //+5V
 //GND
 
